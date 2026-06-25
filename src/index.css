@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+.cinzel {
+  font-family: "Cinzel", serif;
+}
+
+/* Light */
+:root {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark = TRUE BLACK */
+.dark,
+.dark body,
+.dark #root {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Kill blue focus glow */
+* {
+  accent-color: black;
+}
+
+.dark * {
+  accent-color: white;
+}
