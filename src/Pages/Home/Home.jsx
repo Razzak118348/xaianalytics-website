@@ -47,7 +47,7 @@ const Home = () => {
                 </Link>
               </div>
               <MotionH2
-                text="Publication in Studies in International Series in Operations Research & Management Science"
+                text="Studies in International Series in Operations Research and Management Science"
                 className="text-md lg:text-3xl font-extrabold text-base-content !text-center lg:!text-left"
               />
               <div className="inline-flex items-center gap-2 text-sm font-bold text-secondary mt-1 bg-secondary/10 px-3 py-1 rounded-full">

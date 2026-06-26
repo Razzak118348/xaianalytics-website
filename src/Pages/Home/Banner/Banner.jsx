@@ -10,42 +10,14 @@ import img4 from "/home/ai3.jpg";
 import img3 from "/home/ai4.jpeg";
 import img5 from "/home/ai5.jpeg";
 
-// ────────────────────────────────────────────────────────────────────────────
-
 const SLIDES = [
-  {
-    src: img1,
-    heading: "Explainable and Responsible AI",
-    accent: "in Business Analytics",
-    sub: "",
-  },
-  {
-    src: img2,
-    heading: "Explainable and Responsible AI",
-    accent: "in Business Analytics",
-    sub: "",
-  },
-  {
-    src: img3,
-    heading: "Explainable and Responsible AI",
-    accent: "in Business Analytics",
-    sub: "",
-  },
-  {
-    src: img4,
-    heading: "Explainable and Responsible AI",
-    accent: "in Business Analytics",
-    sub: "",
-  },
-  {
-    src: img5,
-    heading: "Explainable and Responsible AI",
-    accent: "in Business Analytics",
-    sub: "",
-  },
+  { src: img1, heading: "Explainable and Responsible AI", accent: "in Business Analytics" },
+  { src: img2, heading: "Explainable and Responsible AI", accent: "in Business Analytics" },
+  { src: img3, heading: "Explainable and Responsible AI", accent: "in Business Analytics" },
+  { src: img4, heading: "Explainable and Responsible AI", accent: "in Business Analytics" },
+  { src: img5, heading: "Explainable and Responsible AI", accent: "in Business Analytics" },
 ];
 
-// ── ReactBits-style Framer Motion variants ───────────────────────────────────
 const textVariant = {
   hidden: { opacity: 0, y: 26, filter: "blur(4px)" },
   visible: (d = 0) => ({
@@ -81,60 +53,35 @@ const imageVariant = {
   exit: { scale: 0.97, opacity: 0, transition: { duration: 0.45 } },
 };
 
-// ── SlideContent — animated editorial ───────────────────────────────────
 function SlideContent({ slide, index, total }) {
   return (
     <AnimatePresence mode="wait">
+      {/* Fixed: Restructured padding constraints for ultra-clean mobile views */}
       <div
-        key={slide.label}
+        key={index}
         className="absolute inset-0 z-20 flex flex-col justify-end pointer-events-none"
       >
-        <div className="px-8 pb-16 md:px-14 md:pb-16 max-w-2xl">
-          {/* Heading */}
+        <div className="px-6 pb-12 sm:px-10 sm:pb-14 md:px-14 md:pb-16 max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-5xl">
+          {/* Fixed: Dynamic fluid typographic scale to prevent nav-arrow collisions */}
           <motion.h2
             custom={0.1}
             variants={textVariant}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="font-['Playfair_Display'] font-normal text-white leading-[1.05] text-5xl md:text-7xl"
+            className="font-['Playfair_Display'] font-normal text-white leading-[1.1] text-3xl md:text-5xl lg:text-7xl tracking-tight"
           >
             {slide.heading}{" "}
-            <em className="italic text-amber-200/85">{slide.accent}</em>
+            <em className="italic text-amber-200/85 block sm:inline">{slide.accent}</em>
           </motion.h2>
 
-          {/* Divider — ReactBits scaleX reveal */}
           <motion.div
             variants={lineVariant}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="h-px bg-white/20 w-24 my-5"
+            className="h-px bg-white/20 w-16 sm:w-24 my-3 sm:my-5"
           />
-
-          {/* Sub-copy */}
-          <motion.p
-            custom={0.25}
-            variants={textVariant}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="text-xs font-['DM_Sans'] font-light tracking-[0.2em] text-white/45 uppercase"
-          >
-            {slide.sub}
-          </motion.p>
-
-          {/* CTA */}
-          {/* <motion.button
-            custom={0.38} variants={textVariant} initial="hidden" animate="visible" exit="exit"
-            whileHover={{ x: 5 }} whileTap={{ scale: 0.97 }}
-            className="pointer-events-auto mt-8 inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-['DM_Sans'] font-light text-white/75 border-b border-white/25 pb-1 hover:text-white hover:border-white/55 transition-colors duration-300"
-          >
-            Explore Collection
-            <svg className="w-3 h-3 stroke-current fill-none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </motion.button> */}
         </div>
 
         {/* Bottom-right slide counter */}
@@ -144,12 +91,12 @@ function SlideContent({ slide, index, total }) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="absolute bottom-8 right-10 text-right hidden md:block select-none"
+          className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 text-right hidden sm:block select-none"
         >
-          <span className="font-['Playfair_Display'] text-[4.5rem] leading-none font-normal text-white/[0.07]">
+          <span className="font-['Playfair_Display'] text-[3rem] md:text-[4.5rem] leading-none font-normal text-white/[0.07]">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <p className="text-[9px] tracking-[0.3em] uppercase text-white/20 font-['DM_Sans'] mt-0.5">
+          <p className="text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-white/20 font-['DM_Sans'] mt-0.5">
             of {String(total).padStart(2, "0")}
           </p>
         </motion.div>
@@ -158,47 +105,45 @@ function SlideContent({ slide, index, total }) {
   );
 }
 
-// ── NavBtn ───────────────────────────────────────────────────────────────────
 function NavBtn({ onClick, dir }) {
   return (
     <motion.button
       onClick={onClick}
-      whileHover={{ scale: 1.08, backgroundColor: "rgba(255,255,255,0.10)" }}
-      whileTap={{ scale: 0.93 }}
-      className={`absolute top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full flex items-center justify-center border border-white/15 bg-white/[0.06] backdrop-blur-sm text-white/65 hover:text-white hover:border-white/30 transition-colors duration-300 ${dir === "prev" ? "left-5 md:left-8" : "right-5 md:right-8"}`}
+      whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.12)" }}
+      whileTap={{ scale: 0.95 }}
+      // Fixed: Micro-scaled arrow boundaries down for tighter screen sizes
+      className={`absolute top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center border border-white/15 bg-white/[0.06] backdrop-blur-sm text-white/65 hover:text-white hover:border-white/30 transition-all duration-300 ${
+        dir === "prev" ? "left-3 sm:left-6 md:left-8" : "right-3 sm:right-6 md:right-8"
+      }`}
       aria-label={dir === "prev" ? "Previous slide" : "Next slide"}
     >
       <svg
-        className="w-4 h-4 stroke-current fill-none"
-        strokeWidth="1.5"
+        className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-current fill-none"
+        strokeWidth="1.75"
         strokeLinecap="round"
         strokeLinejoin="round"
+        boxView="0 0 24 24"
         viewBox="0 0 24 24"
       >
-        {dir === "prev" ? (
-          <path d="M19 12H5M12 19l-7-7 7-7" />
-        ) : (
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        )}
+        {dir === "prev" ? <path d="M19 12H5M12 19l-7-7 7-7" /> : <path d="M5 12h14M12 5l7 7-7 7" />}
       </svg>
     </motion.button>
   );
 }
 
-// ── Dot indicators ────────────────────────────────────────────────────────────
 function Dots({ total, active, onSelect }) {
   return (
-    <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-30 flex items-center gap-[7px]">
+    <div className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-30 flex items-center gap-[6px] sm:gap-[7px]">
       {Array.from({ length: total }).map((_, i) => (
         <motion.button
           key={i}
           onClick={() => onSelect(i)}
           animate={{
-            width: i === active ? 28 : 6,
+            width: i === active ? (window.innerWidth < 640 ? 20 : 28) : 6,
             opacity: i === active ? 1 : 0.28,
           }}
           transition={{ type: "spring", stiffness: 380, damping: 28 }}
-          className="h-[5px] rounded-full bg-white cursor-pointer outline-none"
+          className="h-[4px] sm:h-[5px] rounded-full bg-white cursor-pointer outline-none"
           aria-label={`Go to slide ${i + 1}`}
         />
       ))}
@@ -206,7 +151,6 @@ function Dots({ total, active, onSelect }) {
   );
 }
 
-// ── Progress bar ──────────────────────────────────────────────────────────────
 function ProgressBar({ index, total }) {
   return (
     <div className="absolute top-0 left-0 right-0 h-px bg-white/10 z-30">
@@ -219,7 +163,6 @@ function ProgressBar({ index, total }) {
   );
 }
 
-// ── Thumbnail strip ───────────────────────────────────────────────────────────
 function Thumbs({ slides, active, onSelect }) {
   return (
     <div className="absolute top-6 right-8 z-30 hidden lg:flex gap-2">
@@ -232,9 +175,7 @@ function Thumbs({ slides, active, onSelect }) {
           animate={{
             opacity: i === active ? 1 : 0.32,
             boxShadow:
-              i === active
-                ? "0 0 0 1.5px rgba(255,255,255,0.55)"
-                : "0 0 0 1.5px transparent",
+              i === active ? "0 0 0 1.5px rgba(255,255,255,0.55)" : "0 0 0 1.5px transparent",
           }}
           transition={{ duration: 0.3 }}
           className="w-12 h-8 rounded-sm overflow-hidden"
@@ -252,13 +193,12 @@ function Thumbs({ slides, active, onSelect }) {
   );
 }
 
-// ── Banner (main) ─────────────────────────────────────────────────────────────
 export default function Banner() {
   const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }),
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 36 }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 38 }, [
     autoplay.current,
   ]);
 
@@ -279,11 +219,10 @@ export default function Banner() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-neutral-950"
-      style={{ height: "clamp(440px, 74vh, 860px)" }}
+      // Fixed: Removed inline style clamp object, swapped for multi-stage responsive classes
+      className="relative w-full overflow-hidden bg-neutral-950 h-[45vh] sm:h-[60vh] lg:h-[74vh] min-h-[340px] max-h-[840px] transition-all duration-300"
       aria-label="Image banner"
     >
-      {/* Embla viewport */}
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full touch-pan-y">
           {SLIDES.map((slide, i) => (
@@ -291,7 +230,6 @@ export default function Banner() {
               key={i}
               className="relative flex-[0_0_100%] h-full overflow-hidden"
             >
-              {/* Active slide: animated entrance */}
               <AnimatePresence>
                 {i === selected && (
                   <motion.img
@@ -308,7 +246,6 @@ export default function Banner() {
                 )}
               </AnimatePresence>
 
-              {/* Non-active: static (Embla needs the slide in DOM) */}
               {i !== selected && (
                 <img
                   src={slide.src}
@@ -319,11 +256,9 @@ export default function Banner() {
                 />
               )}
 
-              {/* Cinematic dual gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent pointer-events-none" />
 
-              {/* Grain overlay */}
               <div
                 aria-hidden
                 className="absolute inset-0 pointer-events-none opacity-[0.035]"
@@ -333,7 +268,6 @@ export default function Banner() {
                 }}
               />
 
-              {/* Copy — rendered only on active slide */}
               {i === selected && (
                 <SlideContent
                   slide={slide}

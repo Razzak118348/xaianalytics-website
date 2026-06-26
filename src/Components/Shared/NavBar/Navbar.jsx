@@ -35,8 +35,8 @@ const Navbar = () => {
       <div className="w-full flex items-center justify-between px-2 h-16 max-w-7xl mx-auto">
 
         {/* Logo */}
-        <Link className="text-2xl flex space-x-3 font-bold  text-white font-cinzel" to="/">
-        <img src="/logo.png" className="w-30 h-7" alt="springer logo" />
+        <Link className="text-lg md:text-2xl flex space-x-3 font-bold  text-white font-cinzel" to="/">
+        <img src="/logo.png" className="w-20 h-7 md:w-30 " alt="springer logo" />
 <span>XaiResAiBusAnalytics</span>
 
         </Link>
