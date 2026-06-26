@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="md:col-span-7 space-y-4 w-full">
             <h4 className="font-black text-primary text-center md:text-left flex items-center justify-center md:justify-start gap-2">
               <FiMail className="text-secondary" /> For questions regarding the
-              book,please contact
+              book, please contact
             </h4>
 
             {/* Contact Cards Grid */}

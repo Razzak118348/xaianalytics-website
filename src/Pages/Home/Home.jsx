@@ -28,7 +28,7 @@ const Home = () => {
             <div className="relative max-w-[240px] sm:max-w-[280px] rounded-2xl overflow-hidden shadow-2xl shadow-base-content/10 transition-transform duration-500 hover:scale-[1.03] border border-base-300">
               <Link to="https://link.springer.com/series/6161" target="_blank" rel="noopener noreferrer">
               <img
-                src="/home/book.jpg"
+                src="/home/book.jpeg"
                 alt="Book Cover - Studies in International Series in Operations Research & Management Science"
                 className="w-full h-auto object-cover"
               />
@@ -47,7 +47,7 @@ const Home = () => {
                 </Link>
               </div>
               <MotionH2
-                text="Studies in International Series in Operations Research and Management Science"
+                text="International Series in Operations Research and Management Science"
                 className="text-md lg:text-3xl font-extrabold text-base-content !text-center lg:!text-left"
               />
               <div className="inline-flex items-center gap-2 text-sm font-bold text-secondary mt-1 bg-secondary/10 px-3 py-1 rounded-full">
