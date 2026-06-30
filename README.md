@@ -54,14 +54,14 @@ xaianalytics/
 ├── tailwind.config.js      # Advanced theme breakpoints, custom scales, and utility logic
 ├── firebase.json           # Cloud deployment, routing configurations, and security rules
 └── package.json            # Module orchestration and build pipeline commands
-
+```
 
 ## Local installtion and setup
  ### Clone the repository
     ```git clone [\[https://github.com/yourusername/xaianalytics.git\](https://github.com/yourusername/xaianalytics.git)](https://github.com/Razzak118348/xaianalytics-website.git)
       cd xaianalytics
-
+    ```
  ### Install
-     ```npm install
+     ```npm install ```
  ### Run
-     ```npm run dev
+     ```npm run dev ```
