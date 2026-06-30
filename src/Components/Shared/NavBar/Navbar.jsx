@@ -28,22 +28,30 @@ const Navbar = () => {
     { name: "Important Dates", path: "/importantDates" },
     { name: "Submission", path: "/submission" },
     { name: "Editors Bio", path: "/editorsBio" },
+    {
+      name: "Contact Us",
+      path: "/contact",
+    },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full font-inter z-50 bg-[black] text-white  ">
       <div className="w-full flex items-center justify-between px-2 h-16 max-w-7xl mx-auto">
-
         {/* Logo */}
-        <Link className="text-lg md:text-2xl flex space-x-3 font-bold  text-white font-cinzel" to="/">
-        <img src="/logo.png" className="w-20 h-7 md:w-30 " alt="springer logo" />
-<span>XaiResAiBusAnalytics</span>
-
+        <Link
+          className="text-lg md:text-2xl flex space-x-3 font-bold  text-white font-cinzel"
+          to="/"
+        >
+          <img
+            src="/logo.png"
+            className="w-20 h-7 md:w-30 "
+            alt="springer logo"
+          />
+          <span>XaiResAiBusAnalytics</span>
         </Link>
 
         {/* ================= DESKTOP MENU ================= */}
         <div className="hidden md:flex items-center gap-6">
-
           {/* Links */}
           {navLinks.map((link, i) => (
             <NavLink
@@ -106,15 +114,13 @@ const Navbar = () => {
                 </NavLink>
               ))}
 
-
-
               {/* Theme */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-100 text-black dark:text-white dark:hover:bg-gray-800 "
-          >
-            {theme === "dark" ? <FaSun /> : <FaMoon />}
-          </button>
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full hover:bg-gray-100 text-black dark:text-white dark:hover:bg-gray-800 "
+              >
+                {theme === "dark" ? <FaSun /> : <FaMoon />}
+              </button>
             </ul>
           </motion.div>
         )}

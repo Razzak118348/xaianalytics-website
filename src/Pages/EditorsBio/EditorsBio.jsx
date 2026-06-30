@@ -1,5 +1,3 @@
-
-
 const EditorsBio = () => {
     return (
         <div>
