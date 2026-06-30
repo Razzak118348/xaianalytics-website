@@ -13,12 +13,12 @@ const editorsData = [
     institution: "School of Management, Swansea University, UK",
     image: "/photo1.jpg",
     tags: ["FinTech", "Big Data Analytics", "Data Mining", "200+ SSCI Papers"],
-    metrics: [
+    metrics: [{ label: "Books Authored", value: "5 Edited Volumes" },
       { label: "Publications", value: "200+ SSCI / ABS" },
       { label: "Editorial Roles", value: "Associate & Guest Editor" },
     ],
     bio: [
-      "M Abedin is a Senior Lecturer in FinTech with the School of Management, Swansea University, UK. Earlier, he served as a Senior Lecturer in FinTech with Teesside University, UK. He possesses advanced analytical skills spanning both quantitative and qualitative research paradigms.",
+      "M Abedin is a Senior Lecturer in FinTech with the School of Management, Swansea University, UK. Earlier, he served as a Senior Lecturer in FinTech with Teesside University, UK. He possesses advanced analytical skills spanning both quantitative and qualitative research paradigms. Abedin has authored 5 Edited Volumes Published from Springer Nature and Taylor & Francis",
       "As an experienced data analyst and project evaluator, Abedin specializes deeply in FinTech ecosystems, data mining frameworks, and big data analytics. He remains actively engaged in cross-disciplinary research activities, international project dissemination, and global guest lecturing.",
       "Abedin has published more than 200 SSCI and ABS-listed research papers across top-tier peer-reviewed journals. His contributions appear frequently in the European Journal of Operational Research, IEEE Transactions on Industrial Informatics, Annals of Operations Research, International Journal of Production Research, and International Review of Financial Analysis, among others.",
       "He serves as an Associate Editor for the International Review of Economics and Finance, Journal of Global Information Management, and Kybernetes, alongside guest editor appointments at Decision Support Systems and Technological Forecasting & Social Change.",
