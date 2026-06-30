@@ -19,7 +19,7 @@ const Footer = () => {
               />
             </div>
             <div className="space-y-1">
-              <h3 className="font-cinzel font-bold text-lg text-left ">
+              <h3 className="font-cinzel font-bold text-lg  sm:text-center md:text-left">
                 XaiResAiBusAnalytics
               </h3>
               <p className="text-xs text-base-content/60 max-w-sm leading-relaxed">

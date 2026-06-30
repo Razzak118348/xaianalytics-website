@@ -1,17 +1,12 @@
-import React from "react";
-import Banner from "./Banner/Banner";
-import { MotionDiv, MotionH2, MotionP } from "../../utils/MotionElements"; // Destructuring your named exports
-import { FiBookOpen, FiCalendar, FiExternalLink } from "react-icons/fi"; // Clean vector icons
+import { MotionDiv, MotionH2, MotionP } from "../../utils/MotionElements";
+import { FiBookOpen, FiCalendar, FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Scope from "../../Components/Scope/Scope";
 import Topic from "../../Components/Topic/Topic";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-base-100">
-      {/* Banner kept exactly as it is */}
-      <Banner />
-
+    <div className="bg-base-100">
       {/* Premium Academic Publication Section */}
       <section className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-base-200 p-6 sm:p-10 rounded-3xl border border-base-300 shadow-xl overflow-hidden relative group">
@@ -109,7 +104,7 @@ const Home = () => {
                   className="btn btn-primary btn-md sm:btn-md px-8 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                 >
                   <span className="text-white">Click Here to Submit</span>
-                  <FiExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <FiExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </MotionDiv>
             </div>

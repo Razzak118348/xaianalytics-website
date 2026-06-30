@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "../Components/Shared/NavBar/Navbar";
 import Footer from "../Components/Shared/Footer/Footer";
 import useTheme from "../hooks/useTheme";
+import Banner from "../Components/Banner/Banner";
 
 const Layout = () => {
   const theme = useTheme();
@@ -18,14 +19,14 @@ const Layout = () => {
 
       <main
         className="
-          pt-16 lg:pt-16 mx-auto
+          pt-12 mx-auto
           w-full
           min-h-[calc(100vh-240px)]
-
           2xl:max-w-screen-2xl
           3xl:max-w-[1650px]
         "
       >
+        <Banner />
         <Outlet />
       </main>
 
