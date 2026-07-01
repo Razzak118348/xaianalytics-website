@@ -9,7 +9,7 @@ import {
   FiLayers,
   FiDownload
 } from "react-icons/fi";
-
+import { Link } from "react-router-dom";
 const Submission = () => {
   // Key submission checkpoints for quick scannability
   const quickMetrics = [
@@ -176,17 +176,17 @@ const Submission = () => {
             </p>
           </div>
 
-          <div className="flex justify-center w-full">
-            <a
-              href="https://easychair.org/conferences/?conf=mlteef2024"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary btn-md px-10 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 w-full sm:w-fit"
-            >
-              <span className="text-white font-bold">Submit via EasyChair</span>
-              <FiExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-          </div>
+          <div className="w-full flex justify-center">
+              <MotionDiv y={30} delay={0.3} className="w-full sm:w-auto pt-2">
+                <Link
+                  to="https://easychair.org/account/signin?l=8742937441755881830.1782908715.1624ee14"
+                  className="btn btn-primary btn-md sm:btn-md px-8 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
+                >
+                  <span className="text-white">Click Here to Submit</span>
+                  <FiExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
+              </MotionDiv>
+            </div>
         </MotionDiv>
 
       </div>

@@ -1,50 +1,4 @@
-// import { MotionDiv, MotionH2, MotionP } from "../../utils/MotionElements";
-// import { FiBookOpen, FiCalendar, FiExternalLink } from "react-icons/fi";
-// import { Link } from "react-router-dom";
 
-// const ImportantDates = () => {
-//     return (
-//         <div>
-// <MotionDiv
-//               y={30}
-//               delay={0.2}
-//               className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full bg-base-100 p-4 rounded-2xl border border-base-300/60"
-//             >
-//               <div className="flex items-center gap-3 p-2">
-//                 <div className="p-2.5 rounded-xl bg-error/10 text-error">
-//                   <FiCalendar className="w-5 h-5" />
-//                 </div>
-//                 <div>
-//                   <p className="text-xs text-base-content/50 uppercase font-bold tracking-wider">
-//                     Submission Deadline
-//                   </p>
-//                   <p className="text-sm sm:text-base font-bold text-base-content">
-//                     15 December 2026
-//                   </p>
-//                 </div>
-//               </div>
-
-//               <div className="flex items-center gap-3 p-2 border-t sm:border-t-0 sm:border-l border-base-300/60 pt-4 sm:pt-2 sm:pl-6">
-//                 <div className="p-2.5 rounded-xl bg-success/10 text-success">
-//                   <FiCalendar className="w-5 h-5" />
-//                 </div>
-//                 <div>
-//                   <p className="text-xs text-base-content/50 uppercase font-bold tracking-wider">
-//                     Publication Deadline
-//                   </p>
-//                   <p className="text-sm sm:text-base font-bold text-base-content">
-//                     15 March 2027
-//                   </p>
-//                 </div>
-//               </div>
-//             </MotionDiv>
-//         </div>
-//     );
-// };
-
-// export default ImportantDates;
-
-import React from "react";
 import { MotionDiv, MotionH2, MotionP } from "../../utils/MotionElements";
 import {
   FiCalendar,
@@ -183,10 +137,7 @@ const ImportantDates = () => {
 <div className="w-full flex justify-center">
               <MotionDiv y={30} delay={0.3} className="w-full sm:w-auto pt-2">
                 <Link
-                  to="/"
-                  href="#submit-link" // Replace with your real submission URL
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="https://easychair.org/account/signin?l=8742937441755881830.1782908715.1624ee14"
                   className="btn btn-primary btn-md sm:btn-md px-8 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                 >
                   <span className="text-white">Click Here to Submit</span>

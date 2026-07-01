@@ -96,6 +96,8 @@ const Footer = () => {
           <p className="text-center sm:text-left mt-2">
             © {currentYear} Book Proposal Chapter Board. All Rights Reserved.
           </p>
+          <p>Website Developed by <a href="https://razzak118348.web.app" className="text-primary hover:underline">Abdur Razzak</a></p>
+
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1">
               <FiInfo className="text-xs" /> Peer Reviewed

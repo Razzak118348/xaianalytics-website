@@ -97,10 +97,7 @@ const Home = () => {
             <div className="w-full flex justify-center">
               <MotionDiv y={30} delay={0.3} className="w-full sm:w-auto pt-2">
                 <Link
-                  to="/"
-                  href="#submit-link" // Replace with your real submission URL
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="https://easychair.org/account/signin?l=8742937441755881830.1782908715.1624ee14"
                   className="btn btn-primary btn-md sm:btn-md px-8 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                 >
                   <span className="text-white">Click Here to Submit</span>
